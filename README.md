@@ -1,5 +1,7 @@
 # Oxford Simple IAM — Climate & Policy Dashboard
 
+**Live: https://sayedzamonuddin.github.io/carbon-cost-assessment/**
+
 An interactive dashboard for the Oxford Simple Climate and Integrated Assessment Model
 v1.8 (Myles Allen & Nicholas Leach). The model is ported to JavaScript and runs entirely in
 the browser, so every control recomputes the full 1765–2150 run and redraws instantly.
