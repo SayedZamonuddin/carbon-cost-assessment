@@ -3,6 +3,7 @@ import { Container } from "shards-react";
 
 import ChartGallery from "../components/charts/ChartGallery";
 import buildModelSpecs, { outputOptions } from "../components/charts/specs/modelSpecs";
+import { BLUE, ORANGE } from "../components/charts/palette";
 import StatTile from "../components/common/StatTile";
 import RunControls from "../components/controls/RunControls";
 import { useModel } from "../store/ModelContext";
@@ -80,24 +81,28 @@ const ModelDash = () => {
     <Container fluid className="dash">
       <div className="figures">
         <StatTile
+          tone={BLUE}
           label="Diagnosed TCRE"
           value={kpis.tcre.toFixed(2)}
           unit="°C/TtC"
           detail="Warming per trillion tonnes of carbon emitted"
         />
         <StatTile
+          tone={ORANGE}
           label="Anthropogenic warming in 2018"
           value={kpis.warming2018.toFixed(2)}
           unit="°C"
           detail={`Relative to ${params.display.refFrom}–${params.display.refTo}`}
         />
         <StatTile
+          tone={ORANGE}
           label="Peak warming"
           value={kpis.peakWarming.toFixed(2)}
           unit="°C"
           detail={`ECS ${params.run.ecs} °C · TCR ${params.run.tcr} °C`}
         />
         <StatTile
+          tone={BLUE}
           label="CO₂ net zero"
           value={kpis.netZeroYear || "Not reached"}
           detail={

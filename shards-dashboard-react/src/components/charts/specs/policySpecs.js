@@ -3,7 +3,7 @@
 import { C_TO_CO2 } from "../../../model/constants";
 import { damageCurve } from "../../../model/economics";
 import { maccCurve } from "../../../model/policy";
-import { AQUA, BLUE, INK, ORANGE, ROLE, VIOLET, baselineStyle } from "../palette";
+import { AQUA, BLUE, ORANGE, ROLE, SLATE, VIOLET, baselineStyle } from "../palette";
 import { costWindow, points } from "./helpers";
 
 const TRILLION = 1 / 1e12;
@@ -26,10 +26,10 @@ export default function buildPolicySpecs({ outputs, statics, params, window }) {
       note:
         "Modelled warming under the current policy, against the no-policy counterfactual and the CMIP5 multi-model means for RCP2.6 and RCP8.5.",
       series: [
-        { label: "With policy", color: INK, width: 2.5, data: points(policy.tempRel, w), unit: " °C" },
+        { label: "With policy", color: SLATE, width: 2.5, data: points(policy.tempRel, w), unit: " °C" },
         {
           label: "No policy",
-          ...baselineStyle(INK),
+          ...baselineStyle(SLATE),
           data: points(baseline.tempRel, w),
           unit: " °C"
         },
@@ -62,7 +62,7 @@ export default function buildPolicySpecs({ outputs, statics, params, window }) {
       series: [
         {
           label: "World",
-          color: INK,
+          color: SLATE,
           width: 2.5,
           data: points(policy.co2.ems, w, C_TO_CO2),
           unit: " GtCO₂"
@@ -81,7 +81,7 @@ export default function buildPolicySpecs({ outputs, statics, params, window }) {
         },
         {
           label: "Baseline",
-          ...baselineStyle(INK),
+          ...baselineStyle(SLATE),
           data: points(baseline.co2.ems, w, C_TO_CO2),
           unit: " GtCO₂"
         }
@@ -184,7 +184,7 @@ export default function buildPolicySpecs({ outputs, statics, params, window }) {
         },
         {
           label: "This run, 2100",
-          color: INK,
+          color: SLATE,
           showLine: false,
           pointRadius: 7,
           endLabel: false,
@@ -203,7 +203,7 @@ export default function buildPolicySpecs({ outputs, statics, params, window }) {
       series: [
         {
           label: "World mitigation",
-          color: INK,
+          color: SLATE,
           width: 2.5,
           data: points(economics.world.fractionalMitigationCost, cw, 100),
           unit: "%"
@@ -245,7 +245,7 @@ export default function buildPolicySpecs({ outputs, statics, params, window }) {
       series: [
         {
           label: "World mitigation",
-          color: INK,
+          color: SLATE,
           width: 2.5,
           data: points(economics.world.mitigationCost, cw, TRILLION),
           unit: "T$"
@@ -290,7 +290,7 @@ export default function buildPolicySpecs({ outputs, statics, params, window }) {
       series: [
         {
           label: "World mitigation",
-          color: INK,
+          color: SLATE,
           width: 2.5,
           data: points(economics.world.discountedMitigationCost, cw, TRILLION),
           unit: "T$"

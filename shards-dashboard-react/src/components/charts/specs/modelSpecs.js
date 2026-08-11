@@ -5,7 +5,7 @@
 // a second y-scale, with the true value restored in tooltips and the table view.
 
 import { C_TO_CO2, N2_TO_N2O } from "../../../model/constants";
-import { AQUA, BLUE, INK, ORANGE, ROLE, VIOLET } from "../palette";
+import { AQUA, BLUE, ORANGE, ROLE, SLATE, VIOLET } from "../palette";
 import { points } from "./helpers";
 
 /** Every series the "Select outputs to display" chart can show. */
@@ -92,7 +92,7 @@ export function outputOptions({ policy, statics }, window) {
       key: "lifetime-ch4",
       group: "Other",
       label: "CH₄ lifetime",
-      color: INK,
+      color: SLATE,
       unit: " years",
       data: () => points(policy.ch4.lifetime, w)
     },
@@ -154,7 +154,7 @@ export default function buildModelSpecs({ outputs, statics, window, selectedOutp
       note:
         "Total warming and the contribution of each forcing agent, against the observed record and the CMIP5 multi-model means.",
       series: [
-        { label: "Total", color: INK, width: 2.5, data: points(policy.tempRel, w), unit: " °C" },
+        { label: "Total", color: SLATE, width: 2.5, data: points(policy.tempRel, w), unit: " °C" },
         { label: "CO₂", color: BLUE, data: points(policy.split.co2, w), unit: " °C" },
         { label: "CH₄", color: ORANGE, data: points(policy.split.ch4, w), unit: " °C" },
         { label: "N₂O", color: AQUA, data: points(policy.split.n2o, w), unit: " °C" },
@@ -195,7 +195,7 @@ export default function buildModelSpecs({ outputs, statics, window, selectedOutp
       xLabel: "Year",
       zeroLine: true,
       series: [
-        { label: "Total", color: INK, width: 2.5, data: points(policy.rfTotal, w), unit: " W/m²" },
+        { label: "Total", color: SLATE, width: 2.5, data: points(policy.rfTotal, w), unit: " W/m²" },
         { label: "CO₂", color: BLUE, data: points(policy.co2.rf, w), unit: " W/m²" },
         { label: "CH₄", color: ORANGE, data: points(policy.ch4.rf, w), unit: " W/m²" },
         { label: "N₂O", color: AQUA, data: points(policy.n2o.rf, w), unit: " W/m²" },

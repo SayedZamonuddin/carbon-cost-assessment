@@ -2,7 +2,7 @@ import React, { useEffect, useRef } from "react";
 import PropTypes from "prop-types";
 
 import Chart from "../../utils/chart";
-import { AXIS_TEXT, GRID, INK, SURFACE } from "./palette";
+import { AXIS_TEXT, GRID, SURFACE } from "./palette";
 import { formatValue } from "./format";
 
 /**
@@ -92,7 +92,7 @@ function buildOptions(spec, variant) {
       enabled: !thumbnail,
       mode: spec.tooltipMode || "index",
       intersect: false,
-      backgroundColor: "rgba(28,28,26,0.94)",
+      backgroundColor: "rgba(28,50,70,0.95)",
       titleFontSize: 12,
       bodyFontSize: 12,
       bodySpacing: 4,
@@ -152,7 +152,7 @@ function buildOptions(spec, variant) {
             display: !thumbnail,
             color: GRID,
             drawBorder: false,
-            zeroLineColor: spec.zeroLine ? "#c9c8c2" : GRID,
+            zeroLineColor: spec.zeroLine ? "#c8c2b0" : GRID,
             zeroLineWidth: spec.zeroLine ? 1.5 : 1
           },
           scaleLabel: scaleLabel("")
@@ -226,5 +226,4 @@ IamChart.propTypes = {
 
 IamChart.defaultProps = { variant: "focus" };
 
-export { INK };
 export default IamChart;

@@ -8,6 +8,7 @@ import ActorControls from "../components/controls/ActorControls";
 import EconomyControls from "../components/controls/EconomyControls";
 import RunControls from "../components/controls/RunControls";
 import { formatSigned } from "../components/charts/format";
+import { BLUE, ORANGE, VIOLET } from "../components/charts/palette";
 import { useModel } from "../store/ModelContext";
 import Welcome from "./Welcome";
 
@@ -32,6 +33,7 @@ const PolicyDash = () => {
     <Container fluid className="dash">
       <div className="figures">
         <StatTile
+          tone={ORANGE}
           label="Warming in 2100"
           value={kpis.warming2100.toFixed(2)}
           unit="°C"
@@ -47,6 +49,7 @@ const PolicyDash = () => {
           detail={`Peaks at ${kpis.peakWarming.toFixed(2)} °C`}
         />
         <StatTile
+          tone={VIOLET}
           label="Climate damage in 2100"
           value={(kpis.damage2100 * 100).toFixed(2)}
           unit="% of GWP"
@@ -61,6 +64,7 @@ const PolicyDash = () => {
           deltaLabel="vs no policy"
         />
         <StatTile
+          tone={BLUE}
           label={`Total cost to ${params.economy.finalCostYear}`}
           value={`$${kpis.totalCost.toFixed(0)}`}
           unit="T"
@@ -69,6 +73,7 @@ const PolicyDash = () => {
           )}T mitigation`}
         />
         <StatTile
+          tone={BLUE}
           label={`Discounted to ${params.economy.discountYear}`}
           value={`$${kpis.discountedCost.toFixed(0)}`}
           unit="T"
